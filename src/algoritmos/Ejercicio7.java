@@ -44,25 +44,25 @@ public class Ejercicio7 extends javax.swing.JFrame {
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("EMPRESA");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 230, 30));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 230, 30));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Años En La Empresa");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 120, 30));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 120, 30));
 
         txtTiempoEmp.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtTiempoEmpKeyTyped(evt);
             }
         });
-        jPanel1.add(txtTiempoEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 100, 30));
+        jPanel1.add(txtTiempoEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 100, 30));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Monto a Pagar");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 100, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 100, 30));
 
         txtMonTotal.setEditable(false);
-        jPanel1.add(txtMonTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 100, 30));
+        jPanel1.add(txtMonTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 100, 30));
 
         cmdCalcular.setText("Calcular");
         cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -70,7 +70,7 @@ public class Ejercicio7 extends javax.swing.JFrame {
                 cmdCalcularActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, -1, -1));
+        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, -1));
 
         cmdBorrar.setText("Borrar");
         cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
@@ -78,58 +78,57 @@ public class Ejercicio7 extends javax.swing.JFrame {
                 cmdBorrarActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, -1, -1));
+        jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtTiempoEmpKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTiempoEmpKeyTyped
-        char c=evt.getKeyChar(); 
-             
-         
-          if(!Character.isDigit(c)) { 
-              getToolkit().beep(); 
-               
-              evt.consume(); }
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+
+            evt.consume();
+        }
     }//GEN-LAST:event_txtTiempoEmpKeyTyped
 
     private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
         String total;
         int tempresa;
-        double op1=0;
-        if(txtTiempoEmp.getText().trim().isEmpty()){
-            JOptionPane.showMessageDialog(this, "Digite Años en la Empresa","ERROR",JOptionPane.ERROR_MESSAGE);
+        double op1 = 0;
+        if (txtTiempoEmp.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Digite Años en la Empresa", "ERROR", JOptionPane.ERROR_MESSAGE);
             txtTiempoEmp.requestFocusInWindow();
-        }
-        else {
-            tempresa=Integer.parseInt(txtTiempoEmp.getText());
-            if(tempresa==1){
-                op1=100000;
-            }else{
-                op1=(tempresa*120000)-20000;
+        } else {
+            tempresa = Integer.parseInt(txtTiempoEmp.getText());
+            if (tempresa == 1) {
+                op1 = 100000;
+            } else {
+                op1 = (tempresa * 120000) - 20000;
             }
-            total=String.valueOf(op1);
+            total = String.valueOf(op1);
             txtMonTotal.setText(total);
         }
-        
+
     }//GEN-LAST:event_cmdCalcularActionPerformed
 
     private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
-       txtTiempoEmp.setText("");
-       txtMonTotal.setText("");
-       
-       txtTiempoEmp.requestFocusInWindow();
+        txtTiempoEmp.setText("");
+        txtMonTotal.setText("");
+
+        txtTiempoEmp.requestFocusInWindow();
     }//GEN-LAST:event_cmdBorrarActionPerformed
 
     /**
